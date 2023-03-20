@@ -107,8 +107,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Yoou.log`,
-        short_name: `Yoou.log`,
+        name: `Awesome Yoouyeon Log`,
+        short_name: `Awesome Yoouyeon Log`,
         start_url: `/`,
         background_color: `#ffffff`,
         // This will impact how browsers show your PWA/website
@@ -117,6 +117,25 @@ module.exports = {
         display: `minimal-ui`,
         icon: `src/images/icon.png`, // This path is relative to the root of the site.
       },
+    },
+    {
+        resolve: "gatsby-omni-font-loader",
+        /* Plugin options */
+        options: {
+            /* Font loading mode */
+            mode: "async",
+            /* Enable font loading listener to handle FOUT */
+            enableListener: true,
+            /* Self-hosted fonts config. Add font files and font CSS files to "static" folder */
+            custom: [
+                {
+                /* Exact name of the font as defied in @font-face CSS rule */
+                name: "NanumSquareRound",
+                /* Path to the font CSS file inside the "static" folder with @font-face definition */
+                file: "/fonts/NanumSquareRound/nanumsquareround.css",
+                },
+            ],
+        }
     },
   ],
 }
