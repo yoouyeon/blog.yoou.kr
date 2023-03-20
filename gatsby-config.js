@@ -9,10 +9,10 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `Yoou.log`,
-    author: `Yoou`,
-    description: `배우고, 생각하고, 느낀 것을 기록합니다.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
+    title: `Awesome Yoouyeon Log`,
+    author: `Yoouyeon`,
+    description: `천방지축 어리둥절 빙글빙글 돌아가는 개발자의 기록`,
+    siteUrl: `https://blog.yoouyeon.dev/`,
     social: {
       github: `yoouyeon`
     },

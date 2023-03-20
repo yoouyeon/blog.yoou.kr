@@ -1,7 +1,7 @@
-# Yoou.log
+# Awesome Yoouyeon Log
 
-페이지 링크 : <https://blog.yoou.kr/>
+페이지 링크 : <https://blog.yoouyeon.dev/>
 
-배우고, 생각하고, 느낀 것들을 기록해 둡니다
+천방지축 어리둥절 빙글빙글 돌아가는 개발자의 기록
 
 using [gatsby-starter-blog](https://github.com/gatsbyjs/gatsby-starter-blog)
