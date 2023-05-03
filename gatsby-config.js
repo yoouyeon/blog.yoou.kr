@@ -9,7 +9,7 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `yoouyeon DLog`,
+    title: `yoouyeon Dlog`,
     author: `Yoouyeon`,
     description: `천방지축 어리둥절 빙글빙글 돌아가는 개발자의 기록`,
     siteUrl: `https://blog.yoouyeon.dev/`,
@@ -107,8 +107,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Yoouyeon DLog`,
-        short_name: `Yoouyeon DLog`,
+        name: `Yoouyeon Dlog`,
+        short_name: `Yoouyeon Dlog`,
         start_url: `/`,
         background_color: `#ffffff`,
         // This will impact how browsers show your PWA/website
