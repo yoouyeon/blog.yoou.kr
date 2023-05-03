@@ -9,12 +9,12 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `Awesome Yoouyeon Log`,
+    title: `yoouyeon DLog`,
     author: `Yoouyeon`,
     description: `천방지축 어리둥절 빙글빙글 돌아가는 개발자의 기록`,
     siteUrl: `https://blog.yoouyeon.dev/`,
     social: {
-      github: `yoouyeon`
+      github: `yoouyeon`,
     },
   },
   plugins: [
@@ -73,15 +73,15 @@ module.exports = {
         feeds: [
           {
             serialize: ({ query: { site, allMarkdownRemark } }) => {
-              return allMarkdownRemark.nodes.map(node => {
+              return allMarkdownRemark.nodes.map((node) => {
                 return Object.assign({}, node.frontmatter, {
                   description: node.excerpt,
                   date: node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + node.fields.slug,
                   guid: site.siteMetadata.siteUrl + node.fields.slug,
                   custom_elements: [{ "content:encoded": node.html }],
-                })
-              })
+                });
+              });
             },
             query: `{
               allMarkdownRemark(sort: {frontmatter: {date: DESC}}) {
@@ -107,8 +107,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Awesome Yoouyeon Log`,
-        short_name: `Awesome Yoouyeon Log`,
+        name: `Yoouyeon DLog`,
+        short_name: `Yoouyeon DLog`,
         start_url: `/`,
         background_color: `#ffffff`,
         // This will impact how browsers show your PWA/website
@@ -119,23 +119,23 @@ module.exports = {
       },
     },
     {
-        resolve: "gatsby-omni-font-loader",
-        /* Plugin options */
-        options: {
-            /* Font loading mode */
-            mode: "async",
-            /* Enable font loading listener to handle FOUT */
-            enableListener: true,
-            /* Self-hosted fonts config. Add font files and font CSS files to "static" folder */
-            custom: [
-                {
-                /* Exact name of the font as defied in @font-face CSS rule */
-                name: "NanumSquareRound",
-                /* Path to the font CSS file inside the "static" folder with @font-face definition */
-                file: "/fonts/NanumSquareRound/nanumsquareround.css",
-                },
-            ],
-        }
+      resolve: "gatsby-omni-font-loader",
+      /* Plugin options */
+      options: {
+        /* Font loading mode */
+        mode: "async",
+        /* Enable font loading listener to handle FOUT */
+        enableListener: true,
+        /* Self-hosted fonts config. Add font files and font CSS files to "static" folder */
+        custom: [
+          {
+            /* Exact name of the font as defied in @font-face CSS rule */
+            name: "NanumSquareRound",
+            /* Path to the font CSS file inside the "static" folder with @font-face definition */
+            file: "/fonts/NanumSquareRound/nanumsquareround.css",
+          },
+        ],
+      },
     },
   ],
-}
+};

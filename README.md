@@ -1,4 +1,4 @@
-# Awesome Yoouyeon Log
+# Yoouyeon DLog
 
 페이지 링크 : <https://blog.yoouyeon.dev/>
 
