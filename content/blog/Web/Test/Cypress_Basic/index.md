@@ -66,3 +66,8 @@ it([], []);
 
 👉 [Cypress Command 정리](https://blog.yoouyeon.dev/Cypress_CheatSheet/) 👈
 
+## 📍 참고
+
+https://github.com/cypress-io/cypress-example-recipes
+
+https://storybook.js.org/tutorials/ui-testing-handbook/react/ko/user-flow-testing/
