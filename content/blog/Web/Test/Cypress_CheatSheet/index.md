@@ -239,6 +239,8 @@ https://docs.cypress.io/api/commands/should
 
 assertion을 생성합니다. (assertion : 반드시 참이어야 하는 조건식) assertion은 참이 되거나 timeout 전까지 계속 자동으로 재시도됩니다.
 
+[assertion에 대하여](https://docs.cypress.io/guides/references/assertions)
+
 ```typescript
 .should(chainers)
 .should(chainers, value)
