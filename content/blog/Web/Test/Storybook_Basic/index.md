@@ -389,3 +389,26 @@ const meta: Meta<typeof TodoItem> = {
   tags: ['autodocs'],
 };
 ```
+
+## 📍 Troubleshooting
+
+### Next.js path alias
+
+`@/pages` 같은 next.js의 path alias가 storybook에는 적용되지 않는 문제가 있었는데 `tsconfig.ts` 파일의 `compilerOptions`에 `"baseUrl"` 항목을 추가해서 해결했다.
+
+```typescript
+// tsconfig.ts
+"compilerOptions": {
+		// 생략
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+```
+
+(기존에는 `storybook-addon-next` 이라는 애드온을 이용해서 해결한 것 같은데 지금은 오히려 `storybook-addon-next` 를 이용하면 다른 문제 (SassError) 가 발생하므로 사용하지 않는 것이 좋겠습니다.)
+
+## 📍 참고
+
+https://storybook.js.org/recipes/next
