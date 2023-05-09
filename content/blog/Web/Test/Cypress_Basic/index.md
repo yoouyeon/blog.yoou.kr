@@ -66,6 +66,81 @@ it([], []);
 
 👉 [Cypress Command 정리](https://blog.yoouyeon.dev/Cypress_CheatSheet/) 👈
 
+## 📍 Custom command
+
+https://docs.cypress.io/api/cypress-api/custom-commands
+
+여러 테스트케이스에서 중복되는 로직들은 Custom command로 정의할 수 있습니다.
+
+```typescript
+// add : add custom command to use when writing tests
+Cypress.Commands.add(name, callbackFn)
+Cypress.Commands.add(name, options, callbackFn)
+
+// addAll : 여러 custom commands를 객체 형태로 한번에 추가
+Cypress.Commands.addAll(callbackObj)
+Cypress.Commands.addAll(options, callbackObj)
+
+// overwrite : use to override an existing built-in Cypress command or reserved internal function.
+Cypress.Commands.overwrite(name, callbackFn)
+```
+
+초기 e2e테스트 설정시에 custom command 예시가 적힌 support/commands.ts 파일을 만들 수 있고 이 파일 안에서 custom command들을 추가해 줄 수 있습니다.
+
+```typescript
+// cypress/support/commands.ts
+Cypress.Commands.add('login', (username: string, password: string) => {
+  cy.visit(Cypress.env('home'));
+  cy.get('input[type=button]').click();
+  cy.origin('https://signin.intra.42.fr', () => {
+    cy.get('.btn-login-student').click();
+  });
+  cy.origin('https://auth.42.fr/', () => {
+    cy.get('input#username').type(username);
+    cy.get('input#password').type(password);
+    cy.get('button#kc-login').click();
+  });
+});
+```
+
+이렇게 정의한 command들은 테스트 작성 시에 다음과 같이 사용할 수 있습니다.
+
+```typescript
+describe('프로필 기능 테스트🥳', () => {
+  before(() => {
+    // 👇 custom command!
+    cy.login(Cypress.env('normal_username'), Cypress.env('normal_password'));
+  });
+  it('passes', () => {
+    cy.log('42 로그인 성공');
+  });
+});
+
+```
+
+### ⚠️ typescript 사용 시 주의사항
+
+위와 같이 custom error를 정의해주면 typescript에서는 `keyof Chainable<any>` 에 `string` 타입을 할당할 수 없다는 에러가 나기 때문에 아래와 같이 타입을 지정해줘야 합니다.
+
+```typescript
+// cypress/global.d.ts
+
+/// <reference types="cypress" />
+
+declare namespace Cypress {
+  interface Chainable<Subject = any> {
+    login(username: string, password: string): Chainable<any>;
+  }
+}
+
+```
+
+참고 : https://stackoverflow.com/questions/73018000/argument-type-string-is-not-assignable-to-parameter-type-keyof-chainable-cyp
+
+## 📍 Fixture
+
+~~추가 예정~~
+
 ## 📍 참고
 
 https://github.com/cypress-io/cypress-example-recipes
