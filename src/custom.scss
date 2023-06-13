@@ -1,0 +1,73 @@
+$light-yellow: #ffe45e;
+$light-pink: #ff6392;
+$light-sky: #7fc8f8;
+$light-blue: #5aa9e6;
+$light-white: #f9f9f9;
+$light-gray: #757575;
+
+$black: #000000;
+$white: #ffffff;
+
+strong {
+  background: $light-yellow;
+  background-size: 100% 200%;
+}
+
+h2 {
+  border-bottom: $light-sky 2px solid;
+}
+
+a {
+  color: $light-blue;
+  text-decoration: none;
+  border-bottom: $light-blue 2px solid;
+  &:hover {
+    color: $light-pink;
+  }
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background: $light-gray;
+  background: repeating-linear-gradient(
+    90deg,
+    $light-gray,
+    $light-gray 6px,
+    transparent 6px,
+    transparent 12px
+  );
+}
+
+// class
+
+.global-header {
+  a {
+    color: $black;
+    text-decoration: none;
+    border-bottom: none;
+    &:hover {
+      color: $light-pink;
+    }
+  }
+}
+
+.post-list-item {
+  padding: 1rem;
+  border: $light-gray 5px solid;
+  border-radius: 1.5rem;
+  &:hover {
+    box-shadow: 14px 14px 0 -4px $light-yellow;
+  }
+  h2 {
+    border-bottom: none;
+    a {
+      // color: $black;
+      text-decoration: none;
+      border-bottom: none;
+      &:hover {
+        color: $light-pink;
+      }
+    }
+  }
+}
