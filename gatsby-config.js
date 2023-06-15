@@ -18,6 +18,7 @@ module.exports = {
     },
   },
   plugins: [
+    "gatsby-plugin-ts",
     `gatsby-plugin-sass`,
     `gatsby-plugin-image`,
     {
