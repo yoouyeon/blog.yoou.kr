@@ -2,7 +2,8 @@ import * as React from "react";
 import { graphql } from "gatsby";
 
 import Bio from "../components/bio";
-import Layout from "../components/layout";
+// import Layout from "../components/layout";
+import Layout from "../components/main/Layout";
 import Seo from "../components/seo";
 
 import PostListItem from "../components/main/PostListItem";
