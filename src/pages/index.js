@@ -1,9 +1,10 @@
 import * as React from "react";
 import { graphql } from "gatsby";
 
-import Bio from "../components/bio";
+// import Bio from "../components/bio";
 // import Layout from "../components/layout";
 import Layout from "../components/main/Layout";
+import Bio from "../components/main/Bio";
 import Seo from "../components/seo";
 
 import PostListItem from "../components/main/PostListItem";
