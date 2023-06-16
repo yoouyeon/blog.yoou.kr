@@ -26,6 +26,15 @@ export const bioSocial = css({
 export const socialButton = css({
   border: "none",
   background: "none",
+  cursor: "pointer",
+  color: "#000000",
+  a: {
+    color: "#000000",
+    border: "none",
+    ":hover": {
+      color: "#FFB84C",
+    },
+  },
   ":hover": {
     color: "#FFB84C",
   },
