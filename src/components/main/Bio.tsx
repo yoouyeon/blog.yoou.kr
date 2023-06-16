@@ -1,9 +1,9 @@
 import React, { useMemo } from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
-import FaGithub from "@react-icons/all-files/fa/FaGithub";
-import FaTwitter from "@react-icons/all-files/fa/FaTwitter";
-import FaSearch from "@react-icons/all-files/fa/FaSearch";
+import { FaGithub } from "@react-icons/all-files/fa/FaGithub";
+import { FaTwitter } from "@react-icons/all-files/fa/FaTwitter";
+import { FaSearch } from "@react-icons/all-files/fa/FaSearch";
 
 import { bioContainer, bioAuthor, bioSocial, socialButton } from "./Bio.styles";
 
@@ -49,23 +49,33 @@ const BioSocial = ({ github, twitter }: BioSocialType) => {
     const ret: React.ReactNode[] = [];
     if (github) {
       ret.push(
-        <div css={socialButton}>
-          <a href={`https://github.com/${github}`} />
-          <FaGithub />
+        <div key={"social-github"} css={socialButton}>
+          <a href={`https://github.com/${github}`}>
+            <FaGithub />
+          </a>
         </div>
       );
     }
     if (twitter) {
       ret.push(
-        <div css={socialButton}>
-          <a href={`https://twitter.com/${twitter}`} />
+        <div key={"social-twitter"} css={socialButton}>
+          <a href={`https://twitter.com/${twitter}`}>
+            <FaTwitter />
+          </a>
         </div>
       );
     }
     return ret;
   }, [github, twitter]);
 
-  return <div css={bioSocial}>{social} </div>;
+  return (
+    <div css={bioSocial}>
+      {social}
+      <div key={"social-search"} css={socialButton}>
+        <FaSearch />
+      </div>{" "}
+    </div>
+  );
 };
 
 const Bio = () => {
@@ -93,6 +103,7 @@ const Bio = () => {
       <div css={bioAuthor}>
         <p>{author.name}</p>
       </div>
+      <BioSocial github={social.github} twitter={social.twitter} />
     </div>
   );
 };
