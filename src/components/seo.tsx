@@ -17,7 +17,7 @@ type SeoProps = {
 const Seo = ({ description, title, children }: SeoProps) => {
   const { site } = useStaticQuery(
     graphql`
-      query {
+      query getSiteMetadata {
         site {
           siteMetadata {
             title
@@ -30,6 +30,8 @@ const Seo = ({ description, title, children }: SeoProps) => {
       }
     `
   );
+
+  console.log(site);
 
   const metaDescription = description || site.siteMetadata.description;
   const defaultTitle = site.siteMetadata?.title;

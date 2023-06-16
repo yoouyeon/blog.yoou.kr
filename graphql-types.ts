@@ -2716,15 +2716,15 @@ export type ImageSharpGroupConnectionGroupArgs = {
   field: ImageSharpFieldSelector;
 };
 
-export type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;
+export type BioQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type Unnamed_1_Query = { site?: { siteMetadata?: { title?: string | null, description?: string | null, social?: { twitter?: string | null } | null } | null } | null };
+export type BioQueryQuery = { site?: { siteMetadata?: { description?: string | null, author?: { name?: string | null } | null, social?: { github?: string | null, twitter?: string | null } | null } | null } | null };
 
-export type Unnamed_2_QueryVariables = Exact<{ [key: string]: never; }>;
+export type GetSiteMetadataQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type Unnamed_2_Query = { site?: { buildTime?: any | null } | null };
+export type GetSiteMetadataQuery = { site?: { siteMetadata?: { title?: string | null, description?: string | null, social?: { twitter?: string | null } | null } | null } | null };
 
 export type GatsbyImageSharpFixedFragment = { base64?: string | null, width: number, height: number, src: string, srcSet: string };
 
