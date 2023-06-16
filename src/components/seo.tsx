@@ -31,8 +31,6 @@ const Seo = ({ description, title, children }: SeoProps) => {
     `
   );
 
-  console.log(site);
-
   const metaDescription = description || site.siteMetadata.description;
   const defaultTitle = site.siteMetadata?.title;
 
