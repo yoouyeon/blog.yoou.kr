@@ -1,8 +1,13 @@
 import * as React from "react";
 import { Link } from "gatsby";
 
-import { LayoutContainer } from "./Layout.styles";
-import { LayoutHeader } from "./Layout.styles";
+import {
+  LayoutContainer,
+  LayoutHeader,
+  LayoutMain,
+  LayoutFooter,
+} from "./Layout.styles";
+import Sidebar from "./SideBar";
 
 type LayoutProps = {
   location: Location;
@@ -17,9 +22,9 @@ type HeaderProps = {
 
 const Header = ({ title, isRootPath }: HeaderProps) => {
   return (
-    <LayoutHeader isRootPath={isRootPath}>
+    <header css={LayoutHeader(isRootPath)}>
       <Link to="/">{title}</Link>
-    </LayoutHeader>
+    </header>
   );
 };
 
@@ -29,17 +34,16 @@ const Layout = ({ title, children }: LayoutProps) => {
 
   return (
     // <div className="global-wrapper" data-is-root-path={isRootPath}>
-    <LayoutContainer isRootPath={isRootPath}>
-      {/* <header className="global-header">{title}</header> */}
+    <div css={LayoutContainer(isRootPath)}>
       <Header title={title} isRootPath={isRootPath} />
-      <main>{children}</main>
-      <footer>
+      <Sidebar />
+      <main css={LayoutMain}>{children}</main>
+      <footer css={LayoutFooter}>
         © {new Date().getFullYear()}, Built with
         {` `}
         <a href="https://www.gatsbyjs.com">Gatsby</a>
       </footer>
-    </LayoutContainer>
-    // </div>
+    </div>
   );
 };
 
