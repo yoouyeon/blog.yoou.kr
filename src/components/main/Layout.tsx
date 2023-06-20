@@ -28,7 +28,7 @@ const Header = ({ title, isRootPath }: HeaderProps) => {
   );
 };
 
-const Layout = ({ title, children }: LayoutProps) => {
+const Layout = ({ title, children, location }: LayoutProps) => {
   const rootPath = `${__PATH_PREFIX__}/`;
   const isRootPath = location.pathname === rootPath;
 
