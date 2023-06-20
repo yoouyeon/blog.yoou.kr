@@ -20,6 +20,9 @@ module.exports = {
       twitter: `yoouyeon`,
     },
   },
+  flags: {
+    DEV_SSR: true,
+  },
   plugins: [
     "gatsby-plugin-ts",
     `gatsby-plugin-sass`,

@@ -251,6 +251,7 @@ export type Site = Node & {
   siteMetadata?: Maybe<SiteSiteMetadata>;
   port?: Maybe<Scalars['Int']>;
   host?: Maybe<Scalars['String']>;
+  flags?: Maybe<SiteFlags>;
   polyfill?: Maybe<Scalars['Boolean']>;
   pathPrefix?: Maybe<Scalars['String']>;
   jsxRuntime?: Maybe<Scalars['String']>;
@@ -268,6 +269,10 @@ export type SiteBuildTimeArgs = {
   fromNow?: InputMaybe<Scalars['Boolean']>;
   difference?: InputMaybe<Scalars['String']>;
   locale?: InputMaybe<Scalars['String']>;
+};
+
+export type SiteFlags = {
+  DEV_SSR?: Maybe<Scalars['Boolean']>;
 };
 
 export type SiteSiteMetadata = {
@@ -833,6 +838,7 @@ export type QuerySiteArgs = {
   siteMetadata?: InputMaybe<SiteSiteMetadataFilterInput>;
   port?: InputMaybe<IntQueryOperatorInput>;
   host?: InputMaybe<StringQueryOperatorInput>;
+  flags?: InputMaybe<SiteFlagsFilterInput>;
   polyfill?: InputMaybe<BooleanQueryOperatorInput>;
   pathPrefix?: InputMaybe<StringQueryOperatorInput>;
   jsxRuntime?: InputMaybe<StringQueryOperatorInput>;
@@ -1874,6 +1880,10 @@ export type SocialFilterInput = {
   github?: InputMaybe<StringQueryOperatorInput>;
 };
 
+export type SiteFlagsFilterInput = {
+  DEV_SSR?: InputMaybe<BooleanQueryOperatorInput>;
+};
+
 export type SiteConnection = {
   totalCount: Scalars['Int'];
   edges: Array<SiteEdge>;
@@ -1924,6 +1934,7 @@ export type SiteFieldSelector = {
   siteMetadata?: InputMaybe<SiteSiteMetadataFieldSelector>;
   port?: InputMaybe<FieldSelectorEnum>;
   host?: InputMaybe<FieldSelectorEnum>;
+  flags?: InputMaybe<SiteFlagsFieldSelector>;
   polyfill?: InputMaybe<FieldSelectorEnum>;
   pathPrefix?: InputMaybe<FieldSelectorEnum>;
   jsxRuntime?: InputMaybe<FieldSelectorEnum>;
@@ -1951,6 +1962,10 @@ export type AuthorFieldSelector = {
 export type SocialFieldSelector = {
   twitter?: InputMaybe<FieldSelectorEnum>;
   github?: InputMaybe<FieldSelectorEnum>;
+};
+
+export type SiteFlagsFieldSelector = {
+  DEV_SSR?: InputMaybe<FieldSelectorEnum>;
 };
 
 export type SiteGroupConnection = {
@@ -1999,6 +2014,7 @@ export type SiteFilterInput = {
   siteMetadata?: InputMaybe<SiteSiteMetadataFilterInput>;
   port?: InputMaybe<IntQueryOperatorInput>;
   host?: InputMaybe<StringQueryOperatorInput>;
+  flags?: InputMaybe<SiteFlagsFilterInput>;
   polyfill?: InputMaybe<BooleanQueryOperatorInput>;
   pathPrefix?: InputMaybe<StringQueryOperatorInput>;
   jsxRuntime?: InputMaybe<StringQueryOperatorInput>;
@@ -2015,6 +2031,7 @@ export type SiteSortInput = {
   siteMetadata?: InputMaybe<SiteSiteMetadataSortInput>;
   port?: InputMaybe<SortOrderEnum>;
   host?: InputMaybe<SortOrderEnum>;
+  flags?: InputMaybe<SiteFlagsSortInput>;
   polyfill?: InputMaybe<SortOrderEnum>;
   pathPrefix?: InputMaybe<SortOrderEnum>;
   jsxRuntime?: InputMaybe<SortOrderEnum>;
@@ -2042,6 +2059,10 @@ export type AuthorSortInput = {
 export type SocialSortInput = {
   twitter?: InputMaybe<SortOrderEnum>;
   github?: InputMaybe<SortOrderEnum>;
+};
+
+export type SiteFlagsSortInput = {
+  DEV_SSR?: InputMaybe<SortOrderEnum>;
 };
 
 export type SiteFunctionConnection = {
