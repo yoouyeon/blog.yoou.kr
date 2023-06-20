@@ -38,6 +38,7 @@ export const LayoutSideBar = css({
 
 export const LayoutMain = css({
   gridArea: "LayoutMain",
+  padding: "3.75rem 9.4rem",
 });
 
 export const LayoutFooter = css({
