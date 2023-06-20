@@ -4,12 +4,14 @@ import { css } from "@emotion/react";
 export const LayoutContainer = (isRootPath: boolean) =>
   css({
     display: "grid",
+    gridTemplateColumns: "repeat(4, 1fr)",
     gridTemplateAreas:
-      '"LayoutHeader" "LayoutSideBar" "LayoutMain" "LayoutFooter"',
-    "@media (min-width: 768px)": {
-      gridTemplateColumns: "repeat(4, 1fr)",
+      '"LayoutSideBar LayoutHeader LayoutHeader LayoutHeader" "LayoutSideBar LayoutMain LayoutMain LayoutMain" "LayoutFooter LayoutFooter LayoutFooter LayoutFooter"',
+    "@media (max-width: 991.98px)": {
+      gridTemplateRows: "1fr",
+      gridTemplateColumns: "1fr",
       gridTemplateAreas:
-        '"LayoutSideBar LayoutHeader LayoutHeader LayoutHeader" "LayoutSideBar LayoutMain LayoutMain LayoutMain" "LayoutFooter LayoutFooter LayoutFooter LayoutFooter"',
+        '"LayoutHeader" "LayoutSideBar" "LayoutMain" "LayoutFooter"',
     },
   });
 
@@ -39,6 +41,9 @@ export const LayoutSideBar = css({
 export const LayoutMain = css({
   gridArea: "LayoutMain",
   padding: "3.75rem 9.4rem",
+  "@media (max-width: 991.98px)": {
+    padding: "2rem 1.25rem",
+  },
 });
 
 export const LayoutFooter = css({
