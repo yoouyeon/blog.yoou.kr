@@ -6,12 +6,17 @@ export const LayoutContainer = (isRootPath: boolean) =>
     display: "grid",
     gridTemplateColumns: "repeat(4, 1fr)",
     gridTemplateAreas:
-      '"LayoutSideBar LayoutHeader LayoutHeader LayoutHeader" "LayoutSideBar LayoutMain LayoutMain LayoutMain" "LayoutFooter LayoutFooter LayoutFooter LayoutFooter"',
+      '"LayoutSideBar LayoutHeader LayoutHeader LayoutHeader" \
+      "LayoutSideBar LayoutMain LayoutMain LayoutMain" \
+      "LayoutFooter LayoutFooter LayoutFooter LayoutFooter"',
     "@media (max-width: 991.98px)": {
-      gridTemplateRows: "1fr",
       gridTemplateColumns: "1fr",
       gridTemplateAreas:
-        '"LayoutHeader" "LayoutSideBar" "LayoutMain" "LayoutFooter"',
+        '"LayoutHeader" \
+        "LayoutSideBar" \
+        "LayoutAdmonition" \
+        "LayoutMain" \
+        "LayoutFooter"',
     },
   });
 
@@ -31,6 +36,15 @@ export const LayoutHeader = (isRootPath: boolean) =>
     },
     gridArea: "LayoutHeader",
   });
+
+export const LayoutAdmonition = css({
+  display: "none",
+  gridArea: "LayoutAdmonition",
+  width: "100%",
+  "@media (max-width: 991.98px)": {
+    display: "block",
+  },
+});
 
 export const LayoutSideBar = css({
   gridArea: "LayoutSideBar",

@@ -31,6 +31,7 @@
     "gatsby-transformer-sharp": "^5.11.0",
     "prismjs": "^1.29.0",
     "react": "^18.1.0",
+    "react-admonitions": "^2.1.0",
     "react-dom": "^18.1.0",
     "react-helmet": "^6.1.0",
     "sass": "^1.63.4"
