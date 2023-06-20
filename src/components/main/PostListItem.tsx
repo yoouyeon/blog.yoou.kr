@@ -29,7 +29,7 @@ function PostListItem({
             <h2>
               <span itemProp="headline">{title}</span>
             </h2>
-            <small>{date}</small>
+            {/* <small>{date}</small> */}
           </header>
           <section>
             <p

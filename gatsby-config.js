@@ -10,14 +10,21 @@
 module.exports = {
   siteMetadata: {
     title: `yoouyeon Dlog`,
-    author: `Yoouyeon`,
+    author: {
+      name: `yoouyeon`,
+    },
     description: `천방지축 어리둥절 빙글빙글 돌아가는 개발자의 기록`,
     siteUrl: `https://blog.yoouyeon.dev/`,
     social: {
       github: `yoouyeon`,
+      twitter: `yoouyeon`,
     },
   },
+  flags: {
+    DEV_SSR: true,
+  },
   plugins: [
+    "gatsby-plugin-ts",
     `gatsby-plugin-sass`,
     `gatsby-plugin-image`,
     {

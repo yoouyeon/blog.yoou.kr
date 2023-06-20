@@ -1,6 +1,6 @@
 // custom typefaces
-import "@fontsource/montserrat/variable.css";
-import "@fontsource/merriweather";
+// import "@fontsource/montserrat/variable.css";
+// import "@fontsource/merriweather";
 import "@fontsource/nanum-gothic-coding";
 // normalize CSS across browsers
 import "./src/normalize.css";
