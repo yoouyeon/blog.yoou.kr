@@ -7,9 +7,9 @@ export const LayoutContainer = (isRootPath: boolean) =>
     gridTemplateAreas:
       '"LayoutHeader" "LayoutSideBar" "LayoutMain" "LayoutFooter"',
     "@media (min-width: 768px)": {
-      gridTemplateColumns: "repeat(3, 1fr)",
+      gridTemplateColumns: "repeat(4, 1fr)",
       gridTemplateAreas:
-        '"LayoutSideBar LayoutHeader LayoutHeader" "LayoutSideBar LayoutMain LayoutMain" "LayoutFooter LayoutFooter LayoutFooter"',
+        '"LayoutSideBar LayoutHeader LayoutHeader LayoutHeader" "LayoutSideBar LayoutMain LayoutMain LayoutMain" "LayoutFooter LayoutFooter LayoutFooter LayoutFooter"',
     },
   });
 
@@ -32,6 +32,8 @@ export const LayoutHeader = (isRootPath: boolean) =>
 
 export const LayoutSideBar = css({
   gridArea: "LayoutSideBar",
+  background: "#F9F5F6",
+  padding: "2.75rem",
 });
 
 export const LayoutMain = css({
