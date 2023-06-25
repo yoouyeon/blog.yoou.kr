@@ -3,9 +3,9 @@ import { useStaticQuery, graphql } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 import { FaGithub } from "@react-icons/all-files/fa/FaGithub";
 import { FaTwitter } from "@react-icons/all-files/fa/FaTwitter";
-import { FaSearch } from "@react-icons/all-files/fa/FaSearch";
+import { FaSmile } from "@react-icons/all-files/fa/FaSmile";
 
-import { bioContainer, bioAuthor, bioSocial, socialButton } from "./Bio.styles";
+import { bioContainer, bioAuthor, bioInfo, bioButton } from "./Bio.styles";
 
 type AuthorType = {
   name: string;
@@ -39,28 +39,30 @@ const BioImage = () => (
   />
 );
 
-type BioSocialType = {
+type BioInfoType = {
   github?: string;
   twitter?: string;
 };
 
-const BioSocial = ({ github, twitter }: BioSocialType) => {
+const BioInfo = ({ github, twitter }: BioInfoType) => {
   const social = useMemo(() => {
     const ret: React.ReactNode[] = [];
     if (github) {
       ret.push(
-        <div key={"social-github"} css={socialButton}>
+        <div key={"social-github"} css={bioButton}>
           <a href={`https://github.com/${github}`}>
             <FaGithub />
+            <span>Github</span>
           </a>
         </div>
       );
     }
     if (twitter) {
       ret.push(
-        <div key={"social-twitter"} css={socialButton}>
+        <div key={"social-twitter"} css={bioButton}>
           <a href={`https://twitter.com/${twitter}`}>
             <FaTwitter />
+            <span>Twitter</span>
           </a>
         </div>
       );
@@ -69,11 +71,14 @@ const BioSocial = ({ github, twitter }: BioSocialType) => {
   }, [github, twitter]);
 
   return (
-    <div css={bioSocial}>
+    <div css={bioInfo}>
+      <div key={"about"} css={bioButton}>
+        <a href={``}>
+          <FaSmile />
+          <span>About</span>
+        </a>
+      </div>
       {social}
-      <div key={"social-search"} css={socialButton}>
-        <FaSearch />
-      </div>{" "}
     </div>
   );
 };
@@ -103,7 +108,7 @@ const Bio = () => {
       <div css={bioAuthor}>
         <p>{author.name}</p>
       </div>
-      <BioSocial github={social.github} twitter={social.twitter} />
+      <BioInfo github={social.github} twitter={social.twitter} />
     </div>
   );
 };
