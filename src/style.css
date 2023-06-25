@@ -337,3 +337,10 @@ a:focus {
     list-style-position: inside;
   }
 }
+
+code {
+  font-family: "Elice Digital Coding, monospace" !important;
+  font-weight: bold !important;
+  color: #ba1a1a !important;
+  background-color: #dfe2eb !important;
+}
