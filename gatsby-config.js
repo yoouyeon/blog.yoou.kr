@@ -17,7 +17,7 @@ module.exports = {
     siteUrl: `https://blog.yoouyeon.dev/`,
     social: {
       github: `yoouyeon`,
-      twitter: `yoouyeon`,
+      twitter: `yoouyeon0_0`,
     },
   },
   flags: {
