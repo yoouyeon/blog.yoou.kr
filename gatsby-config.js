@@ -138,12 +138,12 @@ module.exports = {
         /* Self-hosted fonts config. Add font files and font CSS files to "static" folder */
         custom: [
           {
-            name: "Cafe24 Ssurround",
-            file: "/fonts/Cafe24Ssurround/Cafe24Ssurround.css",
+            name: "TmoneyRoundWindExtraBold",
+            file: "/fonts/TmoneyRoundWind/TmoneyRoundWind.css",
           },
           {
-            name: "Cafe24 Ssurround air",
-            file: "/fonts/Cafe24SsurroundAir/Cafe24SsurroundAir.css",
+            name: "TmoneyRoundWindRegular",
+            file: "/fonts/TmoneyRoundWind/TmoneyRoundWind.css",
           },
         ],
       },

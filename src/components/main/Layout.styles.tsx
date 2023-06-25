@@ -37,7 +37,7 @@ export const LayoutHeader = (isRootPath: boolean) =>
     justifyContent: "center",
     alignItems: "center",
     height: "4rem",
-    fontFamily: "Cafe24 Ssurround",
+    fontFamily: "TmoneyRoundWindExtraBold",
     fontSize: "2rem",
     "> a": {
       color: "#000000",

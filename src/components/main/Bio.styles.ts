@@ -20,7 +20,7 @@ export const bioAuthor = css({
   p: {
     margin: "0.5rem 1rem",
     fontSize: "1.5rem",
-    fontFamily: "Cafe24 Ssurround",
+    fontFamily: "TmoneyRoundWindExtraBold",
   },
 });
 
@@ -37,7 +37,7 @@ export const bioButton = css({
     all: "initial",
     display: "flex",
     alignItems: "center",
-    fontFamily: "Cafe24 Ssurround",
+    fontFamily: "TmoneyRoundWindExtraBold",
     fontSize: "1.25rem",
     svg: {
       color: ICON_COLOR,

@@ -11,6 +11,6 @@ export const PostListItemStyles = css(ComponentBackground, {
 
 export const PostListItemTitleStyles = css({
   all: "initial",
-  fontFamily: "Cafe24 Ssurround",
+  fontFamily: "TmoneyRoundWindExtraBold",
   fontSize: "1.5rem",
 });
