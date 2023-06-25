@@ -1,6 +1,11 @@
 import { Link } from "gatsby";
 import React from "react";
 
+import {
+  PostListItemStyles,
+  PostListItemTitleStyles,
+} from "./PostListItem.styles";
+
 type PostListItemProps = {
   // key: string;
   slug: string;
@@ -20,25 +25,25 @@ function PostListItem({
   return (
     <li>
       <article
-        className="post-list-item"
+        // className="post-list-item"
+        css={PostListItemStyles}
         itemScope
         itemType="http://schema.org/Article"
       >
         <Link to={slug} itemProp="url">
           <header>
-            <h2>
-              <span itemProp="headline">{title}</span>
+            <h2 css={PostListItemTitleStyles} itemProp="headline">
+              {title}
             </h2>
-            {/* <small>{date}</small> */}
           </header>
-          <section>
-            <p
-              dangerouslySetInnerHTML={{
-                __html: description || excerpt,
-              }}
-              itemProp="description"
-            />
-          </section>
+          <p
+            dangerouslySetInnerHTML={{
+              __html: description || excerpt,
+            }}
+            itemProp="description"
+          />
+          {/* </section> */}
+          <small>{date}</small>
         </Link>
       </article>
     </li>

@@ -17,7 +17,7 @@ module.exports = {
     siteUrl: `https://blog.yoouyeon.dev/`,
     social: {
       github: `yoouyeon`,
-      twitter: `yoouyeon`,
+      twitter: `yoouyeon0_0`,
     },
   },
   flags: {
@@ -45,6 +45,14 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          {
+            resolve: `gatsby-remark-highlight-code`,
+            options: {
+              terminal: "carbon",
+              theme: "one-dark",
+              lineNumbers: true,
+            },
+          },
           {
             resolve: `gatsby-remark-images`,
             options: {
@@ -138,10 +146,16 @@ module.exports = {
         /* Self-hosted fonts config. Add font files and font CSS files to "static" folder */
         custom: [
           {
-            /* Exact name of the font as defied in @font-face CSS rule */
-            name: "NanumSquareRound",
-            /* Path to the font CSS file inside the "static" folder with @font-face definition */
-            file: "/fonts/NanumSquareRound/nanumsquareround.css",
+            name: "TmoneyRoundWindExtraBold",
+            file: "/fonts/TmoneyRoundWind/TmoneyRoundWind.css",
+          },
+          {
+            name: "TmoneyRoundWindRegular",
+            file: "/fonts/TmoneyRoundWind/TmoneyRoundWind.css",
+          },
+          {
+            name: "Elice Digital Coding",
+            file: "/fonts/EliceDigitalCoding/EliceDigitalCoding.css",
           },
         ],
       },

@@ -1,0 +1,13 @@
+@font-face {
+  font-family: "TmoneyRoundWindRegular";
+  src: local("TmoneyRoundWindRegular"),
+    url("TmoneyRoundWindRegular.otf") format("opentype"),
+    url("TmoneyRoundWindRegular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "TmoneyRoundWindExtraBold";
+  src: local("TmoneyRoundWindExtraBold"),
+    url("TmoneyRoundWindExtraBold.otf") format("opentype"),
+    url("TmoneyRoundWindExtraBold.ttf") format("truetype");
+}

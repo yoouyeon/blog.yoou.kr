@@ -7,8 +7,6 @@ import Seo from "../components/seo";
 
 import PostListItem from "../components/main/PostListItem";
 
-import { layoutTitle } from "../styles/Layout.styles";
-
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`;
   const posts = data.allMarkdownRemark.nodes;
@@ -27,7 +25,6 @@ const BlogIndex = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <div css={layoutTitle}>모든 포스트</div>
       <ol style={{ listStyle: `none` }}>
         {posts.map((post) => {
           const title = post.frontmatter.title || post.fields.slug;

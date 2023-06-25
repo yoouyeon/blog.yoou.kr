@@ -1,13 +1,13 @@
 import * as React from "react";
 import { Link } from "gatsby";
-import Admonition from "react-admonitions";
-
+import { StaticImage } from "gatsby-plugin-image";
+import { AiOutlineMenu } from "@react-icons/all-files/ai/AiOutlineMenu";
 import {
   LayoutContainer,
   LayoutHeader,
   LayoutMain,
   LayoutFooter,
-  LayoutAdmonition,
+  LayoutMobileHeader,
 } from "./Layout.styles";
 import Sidebar from "./SideBar";
 
@@ -30,21 +30,31 @@ const Header = ({ title, isRootPath }: HeaderProps) => {
   );
 };
 
+const MobileBioImage = () => (
+  <StaticImage
+    className="bio-image"
+    layout="fixed"
+    formats={["auto", "webp", "avif"]}
+    src="../../images/profile-pic.png"
+    width={140}
+    height={140}
+    quality={95}
+    alt="Profile picture"
+  />
+);
+
 const Layout = ({ title, children, location }: LayoutProps) => {
   const rootPath = `${__PATH_PREFIX__}/`;
   const isRootPath = location.pathname === rootPath;
 
   return (
-    // <div className="global-wrapper" data-is-root-path={isRootPath}>
     <div css={LayoutContainer(isRootPath)}>
+      <div css={LayoutMobileHeader}>
+        <AiOutlineMenu />
+        <MobileBioImage />
+      </div>
       <Header title={title} isRootPath={isRootPath} />
       <Sidebar />
-      <div css={LayoutAdmonition}>
-        <Admonition type="warning" title="">
-          이 블로그는 현재 PC에 최적화되어 있습니다. 모바일 환경도 열심히 개발
-          중이니 조금만 기다려주세요..! 🥲
-        </Admonition>
-      </div>
       <main css={LayoutMain}>{children}</main>
       <footer css={LayoutFooter}>
         © {new Date().getFullYear()}, Built with

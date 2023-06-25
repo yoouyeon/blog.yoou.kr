@@ -1,51 +1,49 @@
 import { css } from "@emotion/react";
+import { ComponentBackground } from "./Layout.styles";
 
-export const bioContainer = css({
+const LINE_COLOR = "#1060A4";
+const ICON_COLOR = "#1060A4";
+
+export const bioContainer = css(ComponentBackground, {
+  padding: "1.5rem 1rem",
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
-  margin: "15%",
   "bio-image": {
     margin: 0,
   },
 });
 
 export const bioAuthor = css({
-  p: {
-    margin: "2.5rem 0",
-    fontSize: "1.5rem",
-    fontFamily: "Jalnan",
-  },
-});
-
-export const bioSocial = css({
-  display: "flex",
-  justifyContent: "space-between",
-  alignItems: "center",
+  borderTop: `1px dashed ${LINE_COLOR}`,
   width: "100%",
-  padding: "0.25rem 1.25rem",
-  boxShadow: "0px 4px 4px rgba(242, 102, 171, 0.25)",
-  borderRadius: "1rem",
+  p: {
+    margin: "0.5rem 1rem",
+    fontSize: "1.5rem",
+    fontFamily: "TmoneyRoundWindExtraBold",
+  },
 });
 
-export const socialButton = css({
-  display: "flex",
-  alignItems: "center",
-  "> a": {
-    display: "flex",
-  },
-  border: "none",
-  background: "none",
-  cursor: "pointer",
-  color: "#000000",
+export const bioInfo = css({
+  borderTop: `1px dashed ${LINE_COLOR}`,
+  width: "100%",
+  padding: "0.5rem 0 0 0",
+});
+
+export const bioButton = css({
+  // justifyContent: "center",
+  margin: "0.5rem 1rem",
   a: {
-    color: "#000000",
-    border: "none",
-    ":hover": {
-      color: "#FFB84C",
+    all: "initial",
+    display: "flex",
+    alignItems: "center",
+    fontFamily: "TmoneyRoundWindExtraBold",
+    fontSize: "1.25rem",
+    svg: {
+      color: ICON_COLOR,
     },
-  },
-  ":hover": {
-    color: "#FFB84C",
+    span: {
+      marginLeft: "0.25rem",
+    },
   },
 });
