@@ -46,6 +46,14 @@ module.exports = {
       options: {
         plugins: [
           {
+            resolve: `gatsby-remark-highlight-code`,
+            options: {
+              terminal: "carbon",
+              theme: "one-dark",
+              lineNumbers: true,
+            },
+          },
+          {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 630,
@@ -144,6 +152,10 @@ module.exports = {
           {
             name: "TmoneyRoundWindRegular",
             file: "/fonts/TmoneyRoundWind/TmoneyRoundWind.css",
+          },
+          {
+            name: "Elice Digital Coding",
+            file: "/fonts/EliceDigitalCoding/EliceDigitalCoding.css",
           },
         ],
       },

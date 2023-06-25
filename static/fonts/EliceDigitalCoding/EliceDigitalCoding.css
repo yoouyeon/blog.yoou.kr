@@ -1,0 +1,14 @@
+@font-face {
+  font-family: "Elice Digital Coding";
+  font-style: normal;
+  font-weight: 400;
+  src: url("EliceDigitalCodingOTF_Regular.otf") format("opentype"),
+    url("EliceDigitalCodingverH_Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Elice Digital Coding";
+  font-style: normal;
+  font-weight: 700;
+  src: url("EliceDigitalCodingOTF_Bold.otf") format("opentype"),
+    url("EliceDigitalCodingverH_Bold.ttf") format("truetype");
+}

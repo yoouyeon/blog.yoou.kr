@@ -7,6 +7,10 @@ import Layout from "../components/main/Layout";
 // import Bio from "../components/main/Bio";
 import Seo from "../components/seo";
 import Comments from "../components/Comments";
+import { BlogPostContainer, BlogPostContent } from "./blog-post.styles";
+
+import { defineCustomElements as deckDeckGoHighlightElement } from "@deckdeckgo/highlight-code/dist/loader";
+deckDeckGoHighlightElement();
 
 const BlogPostTemplate = ({
   data: { previous, next, site, markdownRemark: post },
@@ -17,7 +21,7 @@ const BlogPostTemplate = ({
   return (
     <Layout location={location} title={siteTitle}>
       <article
-        className="blog-post"
+        css={BlogPostContainer}
         itemScope
         itemType="http://schema.org/Article"
       >
@@ -26,6 +30,7 @@ const BlogPostTemplate = ({
           <p>{post.frontmatter.date}</p>
         </header>
         <section
+          css={BlogPostContent}
           dangerouslySetInnerHTML={{ __html: post.html }}
           itemProp="articleBody"
         />
