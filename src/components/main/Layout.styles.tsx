@@ -2,7 +2,7 @@ import { css } from "@emotion/react";
 
 const LIGHT_COMPONENT_BACKGROUND = "#FDFCFF";
 
-const MOBILE_MEDIA_QUERY = "@media (max-width: 640px)";
+const MOBILE_MEDIA_QUERY = "@media screen and (max-width: 640px)";
 
 export const ComponentBackground = css({
   background: LIGHT_COMPONENT_BACKGROUND,
@@ -14,6 +14,7 @@ export const LayoutContainer = (isRootPath: boolean) =>
     padding: "7.5rem 0",
     margin: "0 auto",
     maxWidth: "1080px",
+    minWidth: "640px",
     display: "grid",
     gridGap: "1.25rem",
     gridTemplateColumns: "240px calc(100% - 1 * 240px)",
@@ -24,8 +25,7 @@ export const LayoutContainer = (isRootPath: boolean) =>
     MOBILE_MEDIA_QUERY: {
       gridTemplateColumns: "1fr",
       gridTemplateAreas:
-        '"LayoutHeader" \
-        "LayoutSideBar" \
+        '"LayoutMobileHeader" \
         "LayoutMain" \
         "LayoutFooter"',
     },
@@ -45,6 +45,14 @@ export const LayoutHeader = (isRootPath: boolean) =>
     },
     gridArea: "LayoutHeader",
   });
+
+export const LayoutMobileHeader = css({
+  gridArea: "LayoutMobileHeader",
+  display: "none",
+  MOBILE_MEDIA_QUERY: {
+    display: "flex",
+  },
+});
 
 export const LayoutSideBar = css({
   gridArea: "LayoutSideBar",
