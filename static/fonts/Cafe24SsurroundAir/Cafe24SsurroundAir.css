@@ -1,0 +1,9 @@
+@font-face {
+  font-family: "Cafe24 Ssurround air";
+  font-weight: 700;
+  src: local("Cafe24 Ssurround air"),
+    url("Cafe24SsurroundAir-v1.1.woff2") format("woff2"),
+    url("Cafe24SsurroundAir-v1.1.woff") format("woff"),
+    url("Cafe24SsurroundAir-v1.1.otf") format("opentype"),
+    url("Cafe24SsurroundAir-v1.1.ttf") format("truetype");
+}
