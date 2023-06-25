@@ -1,5 +1,7 @@
 /* CSS Custom Properties Definitions */
 
+/* const LIGHT_PAGE_BACKGROUND: "#D2E4FF"; */
+
 :root {
   --maxWidth-none: "none";
   --maxWidth-xs: 20rem;
@@ -57,12 +59,12 @@
   --fontSize-5: 2.074rem;
   --fontSize-6: 2.488rem;
   --fontSize-7: 2.986rem;
-  --color-primary: #005b99;
+  /* --color-primary: #005b99;
   --color-text: #2e353f;
   --color-text-light: #4f5969;
   --color-heading: #1a202c;
   --color-heading-black: black;
-  --color-accent: #d1dce5;
+  --color-accent: #d1dce5; */
 }
 
 /* HTML elements */
@@ -78,6 +80,7 @@ html {
   font-size: var(--fontSize-root);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #d2e4ff;
 }
 
 body {
