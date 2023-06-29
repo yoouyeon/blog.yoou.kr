@@ -9,9 +9,6 @@ import Seo from "../components/seo";
 import Comments from "../components/Comments";
 import { BlogPostContainer, BlogPostContent } from "./blog-post.styles";
 
-import { defineCustomElements as deckDeckGoHighlightElement } from "@deckdeckgo/highlight-code/dist/loader";
-deckDeckGoHighlightElement();
-
 const BlogPostTemplate = ({
   data: { previous, next, site, markdownRemark: post },
   location,
